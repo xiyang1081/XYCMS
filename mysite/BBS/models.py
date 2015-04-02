@@ -86,7 +86,7 @@ class BbsContent(models.Model):
     author=models.ForeignKey('BbsUser',verbose_name=u'发布者')
     view_count=models.IntegerField(default=0,verbose_name=u'查看次数')
     rank=models.IntegerField(default=0,verbose_name=u'赞')
-    sex_old=models.CharField(max_length=5,choices=SEX_SELECT,default='kids',verbose_name='年龄类别')
+    sex_old=models.CharField(max_length=5,choices=SEX_SELECT,verbose_name='年龄类别')
     top=models.BooleanField(verbose_name='是否置首页',default=False)
     create_time=models.DateTimeField(verbose_name=u'创建日期',default=datetime.datetime.now())
     update_time=models.DateTimeField(verbose_name=u'更新日期',auto_now_add=True)
@@ -129,4 +129,5 @@ class BbsUserAnswer(models.Model):
     class Meta:
         verbose_name=u'评论'
         verbose_name_plural=u'评论管理中心'
+        
     
